@@ -17,7 +17,7 @@ public class SocketWorker extends Thread{
 	Heap heap;
 
 	public SocketWorker(Socket socket, Heap heap){
-		System.out.println("SocketWorker create");
+		//System.out.println("SocketWorker create");
 		this.socket = socket;
 		this.heap = heap;
 		setDaemon(true);
@@ -27,7 +27,7 @@ public class SocketWorker extends Thread{
 	@Override
 	public void run() {
 		try{
-			System.out.println("Start Thread");
+			//System.out.println("Start Thread");
 			InputStream inputStream = socket.getInputStream();
 			OutputStream outputStream = socket.getOutputStream();
 
@@ -38,12 +38,12 @@ public class SocketWorker extends Thread{
 
 			heap.addCommand(message);
 
-			System.out.println(message);
+			//System.out.println(message);
 			String resp = "Ok";
 			outputStream.write(resp.getBytes());
 
 
-			System.out.println("Stop Thread");
+			//System.out.println("Stop Thread");
 			inputStream.close();
 			socket.close();
 		}catch (Exception e){

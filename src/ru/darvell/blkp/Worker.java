@@ -13,9 +13,10 @@ public class Worker extends Thread{
 	Thread t;
 
 	Worker(Heap heap){
-		System.out.println("worker create");
+		//System.out.println("worker create");
 		this.heap = heap;
 		t = this;
+		t.setDaemon(true);
 		t.start();
 	}
 
@@ -30,7 +31,6 @@ public class Worker extends Thread{
 				}
 				t.sleep(500);
 			}
-
 		}catch (Exception e){
 			System.out.println("Error: "+e.getMessage());
 		}
