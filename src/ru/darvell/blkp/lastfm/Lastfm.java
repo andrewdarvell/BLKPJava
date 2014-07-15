@@ -81,7 +81,6 @@ public class Lastfm {
 	String getSignature(){
 		String sign = "";
 		sign = MD5.getMd5("api_key"+API_KEY+"methodauth.getMobileSessionpassword"+usrpasswd+"username"+usrname+API_SECRET);
-		//sign = MD5.getMd5(API_KEY+"methodauth.getMobileSessionpassword"+usrname+"username"+usrname+API_SECRET);
 		return sign;
 	}
 

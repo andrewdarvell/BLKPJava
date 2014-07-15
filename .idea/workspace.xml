@@ -13,6 +13,7 @@
     <file path="/Arduino.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405343854967" ignored="false" />
     <file path="/Lastfm.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405430706687" ignored="false" />
     <file path="/MD5.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405414727626" ignored="false" />
+    <file path="/AuthResp.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405431486718" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,13 +83,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lastfm.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Lastfm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/lastfm/Lastfm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="33" selection-start="2217" selection-end="2217" vertical-scroll-proportion="0.8603352">
+            <state line="74" column="83" selection-start="2293" selection-end="2293" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthResp.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/lastfm/model/AuthResp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="5" selection-start="923" selection-end="923" vertical-scroll-proportion="0.7765363">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,6 +132,7 @@
         <option value="$PROJECT_DIR$/src/ru/darvell/blkp/utils/MD5.java" />
         <option value="$PROJECT_DIR$/src/ru/darvell/blkp/Server.java" />
         <option value="$PROJECT_DIR$/src/ru/darvell/blkp/lastfm/Lastfm.java" />
+        <option value="$PROJECT_DIR$/src/ru/darvell/blkp/lastfm/model/AuthResp.java" />
       </list>
     </option>
   </component>
@@ -211,7 +222,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
+              <option name="myItemId" value="lastfm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -234,6 +245,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lastfm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -405,8 +420,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.65771025" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34228972" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959481" sideWeight="0.65771025" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34228972" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -479,13 +494,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="21" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="13" selection-start="332" selection-end="332" vertical-scroll-proportion="0.0">
@@ -582,10 +590,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/lastfm/Lastfm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="33" selection-start="2217" selection-end="2217" vertical-scroll-proportion="0.8603352">
+        <state line="74" column="83" selection-start="2293" selection-end="2293" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/lastfm/model/AuthResp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="5" selection-start="923" selection-end="923" vertical-scroll-proportion="0.7765363">
+          <folding />
         </state>
       </provider>
     </entry>
