@@ -3,8 +3,14 @@ package ru.darvell.blkp.lastfm;
 import ru.darvell.blkp.utils.MD5;
 
 import javax.net.ssl.HttpsURLConnection;
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
+import java.net.URLEncoder;
+
+import sun.security.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -40,12 +46,12 @@ public class Lastfm {
 			//URL url = new URL(MAIN_URL+AUTH_METOD);
 			URL url = new URL(null, MAIN_URL+AUTH_METOD ,new sun.net.www.protocol.https.Handler());
 
-			String parameters = "username="+usrname+"&password="+usrpasswd+"&api_key="+API_KEY+"&api_sig="+apiSignature;
+			String parameters = "username="+ usrname + "&password=" + usrpasswd + "&api_key=" + API_KEY + "&api_sig=" + apiSignature;
 
 			HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
 			connection.setRequestMethod("POST");
-			connection.setRequestProperty("User-Agent", USER_AGENT);
 			connection.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+			connection.setRequestProperty("User-Agent", USER_AGENT);
 
 			connection.setDoOutput(true);
 			DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
@@ -58,6 +64,12 @@ public class Lastfm {
 			//System.out.println("Post parameters : " + urlParameters);
 			System.out.println("Response Code : " + responseCode);
 
+			InputStream is = connection.getInputStream();
+			byte buff[] = new byte[64*1024];
+			int count = is.read(buff);
+			String s = new String(buff,0,count);
+			System.out.println(s);
+
 
 		}catch (Exception e){
 			System.out.println("Error: "+e.getMessage());
@@ -68,7 +80,8 @@ public class Lastfm {
 
 	String getSignature(){
 		String sign = "";
-		sign = MD5.getMd5("api_key"+API_KEY+"methodauth.getMobileSessionpassword"+usrname+"username"+usrname+API_SECRET);
+		sign = MD5.getMd5("api_key"+API_KEY+"methodauth.getMobileSessionpassword"+usrpasswd+"username"+usrname+API_SECRET);
+		//sign = MD5.getMd5(API_KEY+"methodauth.getMobileSessionpassword"+usrname+"username"+usrname+API_SECRET);
 		return sign;
 	}
 
