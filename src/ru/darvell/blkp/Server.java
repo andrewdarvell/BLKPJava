@@ -1,5 +1,6 @@
 package ru.darvell.blkp;
 
+import ru.darvell.blkp.lastfm.Lastfm;
 import ru.darvell.blkp.serialport.Arduino;
 
 import java.net.ServerSocket;
@@ -21,7 +22,8 @@ public class Server {
 			System.out.println("server is started");
 			Heap heap = new Heap();
 			new Worker(heap);
-			new Arduino(heap);
+			//new Arduino(heap);
+			new Lastfm("RottenDarvell", "zghjcnjvjcmrf");
 			while(true){
 				new SocketWorker(serverSocket.accept(), heap);
 			}
