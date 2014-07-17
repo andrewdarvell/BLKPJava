@@ -1,5 +1,7 @@
 package ru.darvell.blkp;
 
+import ru.darvell.blkp.lastfm.Lastfm;
+
 /**
  * Created with IntelliJ IDEA.
  * User: darvell
@@ -11,10 +13,12 @@ public class Worker extends Thread{
 
 	Heap heap;
 	Thread t;
+	Lastfm lastfm;
 
-	Worker(Heap heap){
+	Worker(Heap heap,Lastfm lastfm){
 		//System.out.println("worker create");
 		this.heap = heap;
+		this.lastfm = lastfm;
 		t = this;
 		t.setDaemon(true);
 		t.start();

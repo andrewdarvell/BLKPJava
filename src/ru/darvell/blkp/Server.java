@@ -21,9 +21,14 @@ public class Server {
 			ServerSocket serverSocket = new ServerSocket(port);
 			System.out.println("server is started");
 			Heap heap = new Heap();
-			new Worker(heap);
+
 			//new Arduino(heap);
-			new Lastfm("RottenDarvell", "zghjcnjvjcmrf");
+
+			Lastfm lastfm = new Lastfm("RottenDarvell", "zghjcnjvjcmrf");
+			System.out.println(lastfm.getSessionKey());
+			lastfm.sendNowPlay("Letzte%20Instanz","Winterträn");
+			new Worker(heap,lastfm);
+
 			while(true){
 				new SocketWorker(serverSocket.accept(), heap);
 			}
