@@ -25,7 +25,7 @@ public class Server {
 			//new Arduino(heap);
 
 			Lastfm lastfm = new Lastfm("RottenDarvell", "zghjcnjvjcmrf");
-			System.out.println(lastfm.getSessionKey());
+			//System.out.println(lastfm.getSessionKey());
 			lastfm.sendNowPlay("Letzte%20Instanz","Winterträn");
 			new Worker(heap,lastfm);
 

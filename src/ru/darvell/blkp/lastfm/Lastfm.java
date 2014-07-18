@@ -34,7 +34,6 @@ public class Lastfm {
 	private final String USER_AGENT = "Mozilla/5.0";
 
 	String sessionKey = "";
-	String apiSignature = "";
 	String usrname = "";
 	String usrpasswd = "";
 
@@ -55,11 +54,15 @@ public class Lastfm {
 	}
 
 
-	String getSignature(){
+	String getSignature(String method){
 		String sign = "";
-		sign = MD5.getMd5("api_key"+API_KEY
-				+"methodauth.getMobileSessionpassword"+usrpasswd
-				+"username"+usrname+API_SECRET);
+
+		String tmp = "api_key"+API_KEY
+				+"method"+method
+				+"password"+usrpasswd
+				+"username"+usrname+API_SECRET;
+		System.out.println(tmp);
+		sign = MD5.getMd5(tmp);
 		return sign;
 	}
 
@@ -67,8 +70,6 @@ public class Lastfm {
 		try {
 			HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
 			connection.setRequestMethod("POST");
-			connection.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-			connection.setRequestProperty("User-Agent", USER_AGENT);
 
 			connection.setDoOutput(true);
 			DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
@@ -92,8 +93,10 @@ public class Lastfm {
 		try {
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("POST");
-			connection.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-			connection.setRequestProperty("User-Agent", USER_AGENT);
+			//connection.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+			//connection.setRequestProperty("User-Agent", USER_AGENT);
+			//connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+			//connection.setRequestProperty("charset", "utf-8");
 
 			connection.setDoOutput(true);
 			DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
@@ -118,14 +121,15 @@ public class Lastfm {
 		String key = null;
 		try{
 
-			apiSignature = getSignature();
+
 			URL url = new URL(null, MAIN_URL+"?method="+AUTH_METOD ,new sun.net.www.protocol.https.Handler());
 
 			String parameters = "username="+ usrname
 								+"&password=" + usrpasswd
 								+"&api_key=" + API_KEY
-								+"&api_sig=" + apiSignature;
-
+								+"&api_sig=" + getSignature(AUTH_METOD);
+			//System.out.println(url.toString());
+			//System.out.println(parameters);
 			HttpsURLConnection connection = getConnectionSSL(url,parameters);
 			if(connection != null ){
 				InputStream is = connection.getInputStream();
@@ -148,13 +152,16 @@ public class Lastfm {
 			//URL url = new URL(null, MAIN_URL+UPD_NOW_PLNG,new sun.net.www.protocol.https.Handler());
 			URL url = new URL(MAIN_URL);//+UPD_NOW_PLNG+"&api_key="+API_KEY);
 			//System.out.println(url.toString());
-			String parameters = "artist="+artist
+			//System.out.println(sessionKey);
+			String parameters = "method="+UPD_NOW_PLNG
+								+"&artist="+artist
 								+"&track="+track
-								+"&api_key="+API_KEY
-								+"&api_sig="+apiSignature
 								+"&sk="+sessionKey
-								+"&method="+UPD_NOW_PLNG;
-			//System.out.println(parameters);
+								+"&api_key="+API_KEY
+								+"&api_sig="+getSignature(UPD_NOW_PLNG)
+								;
+			System.out.println(MAIN_URL);
+			System.out.println(parameters);
 			HttpURLConnection connection = getConnection(url,parameters);
 			/*
 			if(connection != null ){

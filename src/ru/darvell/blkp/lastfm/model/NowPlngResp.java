@@ -1,5 +1,7 @@
 package ru.darvell.blkp.lastfm.model;
 
+import java.util.ArrayList;
+
 /**
  * Created with IntelliJ IDEA.
  * User: darvell
@@ -88,5 +90,6 @@ public class NowPlngResp {
 				", albumArtist='" + albumArtist + '\'' +
 				", ignoredMessage=" + ignoredMessage +
 				'}';
+
 	}
 }
