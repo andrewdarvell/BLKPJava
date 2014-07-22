@@ -26,7 +26,7 @@ public class Server {
 
 			Lastfm lastfm = new Lastfm("RottenDarvell", "zghjcnjvjcmrf");
 			//System.out.println(lastfm.getSessionKey());
-			lastfm.sendNowPlay("Letzte%20Instanz","Winterträn");
+			lastfm.sendNowPlay("LetzteInstanz","Winterträn");
 			new Worker(heap,lastfm);
 
 			while(true){
