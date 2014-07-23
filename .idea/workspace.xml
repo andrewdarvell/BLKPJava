@@ -11,7 +11,7 @@
     <file path="/Heap.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405085047382" ignored="false" />
     <file path="/Worker.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405596353772" ignored="false" />
     <file path="/Arduino.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405343854967" ignored="false" />
-    <file path="/Lastfm.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406036748078" ignored="false" />
+    <file path="/Lastfm.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406123182954" ignored="false" />
     <file path="/MD5.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405414727626" ignored="false" />
     <file path="/AuthResp.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405595224743" ignored="false" />
     <file path="/SaxLastFM.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405592582309" ignored="false" />
@@ -83,7 +83,7 @@
       <file leaf-file-name="Server.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="45" selection-start="646" selection-end="659" vertical-scroll-proportion="0.0">
+            <state line="28" column="14" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -101,7 +101,7 @@
       <file leaf-file-name="Lastfm.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/lastfm/Lastfm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="176" column="19" selection-start="5107" selection-end="5107" vertical-scroll-proportion="0.5506993">
+            <state line="152" column="87" selection-start="4451" selection-end="4451" vertical-scroll-proportion="0.102564104">
               <folding />
             </state>
           </provider>
@@ -171,7 +171,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -182,7 +182,20 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BLKPLastFM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -191,7 +204,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.sourceCode" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../terminal_soft/CFApp" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -199,9 +212,9 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Application.Server">
     <configuration default="false" name="Server" type="Application" factoryName="Application" temporary="true">
@@ -240,19 +253,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -278,6 +278,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -353,8 +366,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.7114486" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28621495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.71378505" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28621495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -491,6 +504,11 @@
         <state line="40" column="14" selection-start="821" selection-end="821" vertical-scroll-proportion="0.51282054" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../terminal_soft/CFApp/CFApp.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/lastfm/model/NowPlngResp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="75" column="65" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0">
@@ -498,23 +516,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../terminal_soft/CFApp/CFApp.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="45" selection-start="646" selection-end="659" vertical-scroll-proportion="0.0">
+        <state line="28" column="14" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/lastfm/Lastfm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="19" selection-start="5107" selection-end="5107" vertical-scroll-proportion="0.5506993">
+        <state line="152" column="87" selection-start="4451" selection-end="4451" vertical-scroll-proportion="0.102564104">
           <folding />
         </state>
       </provider>

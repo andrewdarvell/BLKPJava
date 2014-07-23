@@ -6,12 +6,14 @@ import ru.darvell.blkp.lastfm.model.NowPlngResp;
 import ru.darvell.blkp.utils.MD5;
 
 import javax.net.ssl.HttpsURLConnection;
-import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,7 +27,7 @@ public class Lastfm {
 	private static final String API_SECRET = "37e759a0b0ba2215937e779d21ebe9e1";
 
 	private static final String MAIN_URL = "http://ws.audioscrobbler.com/2.0/";
-	private static final String AUTH_METOD_METHOD = "auth.getMobileSession";
+	private static final String AUTH_METOD = "auth.getMobileSession";
 	private static final String UPD_NOW_PLNG_METHOD = "track.updateNowPlaying";
 	private static final String GET_TOKEN_METHOD = "auth.getToken";
 
@@ -52,35 +54,49 @@ public class Lastfm {
 	}
 
 
-	String getSignature(String method){
-		String sign = "";
-
-		String tmp = "api_key"+API_KEY
-				+"method"+method
-				+"password"+usrpasswd
-				+"username"+usrname+API_SECRET;
-		//System.out.println(tmp);
-		sign = MD5.getMd5(tmp);
-		return sign;
+	String getSignature(Map<String, String> params){
+		Set<String> sortedParams = new TreeSet<>(params.keySet());
+		StringBuilder stringBuilder = new StringBuilder();
+		for (String s :sortedParams){
+			stringBuilder.append(s);
+			stringBuilder.append(params.get(s));
+		}
+		stringBuilder.append(API_SECRET);
+		return MD5.getMd5(stringBuilder.toString());
 	}
 
-	HttpsURLConnection getConnectionSSL (URL url,String parameters){
+	String buildPostBody(Map<String,String> params){
+		StringBuilder postBody = new StringBuilder();
+		Set<String> sortedParams = new TreeSet<>(params.keySet());
+		for (String s:sortedParams){
+			postBody.append("&");
+			postBody.append(s);
+			postBody.append("=");
+			postBody.append(params.get(s).replace("\\s","%20"));
+		}
+		return postBody.toString();
+	}
+
+	HttpsURLConnection getConnectionSSL (URL url,Map<String,String> parameters){
 		try {
 			HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
 			connection.setRequestMethod("POST");
-
 			connection.setDoOutput(true);
-			DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-			wr.writeBytes(parameters);
-			wr.flush();
-			wr.close();
+			byte[] postDataBytes = buildPostBody(parameters).getBytes("UTF-8");
+			connection.getOutputStream().write(postDataBytes);
 
 			int responseCode = connection.getResponseCode();
 			System.out.println(responseCode);
 			if(responseCode == 200 ){
 				return connection;
-			}else return null;
-
+			}else{
+				InputStream is = connection.getErrorStream();
+				byte[] buff = new byte[64*1024];
+				int i = is.read(buff);
+				String mess = new String(buff,0,i);
+				System.out.println("Error LOGIN code = "+responseCode+" "+mess);
+				return null;
+			}
 		}catch (Exception e){
 			System.out.println("Exception: "+e.getMessage());
 			return null;
@@ -96,23 +112,13 @@ public class Lastfm {
 			byte[] postDataBytes = parameters.getBytes("UTF-8");
 			connection.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
 
-			//connection.setRequestProperty("Content-Length:", "204");
 
-			//connection.setRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36");
-
-			//connection.setRequestProperty("charset", "utf-8");
 
 			connection.setRequestMethod("POST");
 			connection.setDoInput(true);
 			connection.setDoOutput(true);
 
-			/*
-			DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
-			wr.writeBytes(parameters);
-			wr.flush();
-			wr.close();
-			System.out.println(connection.toString());
-            */
+
 			connection.getOutputStream().write(postDataBytes);
 			int responseCode = connection.getResponseCode();
 			System.out.println(responseCode);
@@ -133,21 +139,21 @@ public class Lastfm {
 	String getAuth(){
 		String key = null;
 		try{
-			URL url = new URL(null, MAIN_URL+"?method="+ AUTH_METOD_METHOD,new sun.net.www.protocol.https.Handler());
+			URL url = new URL(null, MAIN_URL,new sun.net.www.protocol.https.Handler());
 
-			String parameters = "username="+ usrname
-								+"&password=" + usrpasswd
-								+"&api_key=" + API_KEY
-								+"&api_sig=" + getSignature(AUTH_METOD_METHOD);
-			HttpsURLConnection connection = getConnectionSSL(url,parameters);
+			Map<String,String> params = new HashMap<>();
+			params.put("api_key",API_KEY);
+			params.put("method", AUTH_METOD);
+			params.put("password",usrpasswd);
+			params.put("username",usrname);
+			params.put("api_sig",getSignature(params));
+
+			HttpsURLConnection connection = getConnectionSSL(url,params);
 			if(connection != null ){
-				InputStream is = connection.getInputStream();
-				AuthResp authResp = Parsers.parseAuthResp(is);
-				is.close();
+				AuthResp authResp = Parsers.parseAuthResp(connection.getInputStream());
 				key = authResp.getKey();
 			}
 			connection.disconnect();
-
 		}catch (Exception e){
 			System.out.println("Error: "+e.getMessage());
 		}
@@ -168,6 +174,7 @@ public class Lastfm {
 								+"&api_key="+API_KEY
 								+"&api_sig="+MD5.getMd5("api_key"+API_KEY+"artist"+artist+"method"+UPD_NOW_PLNG_METHOD+"sk"+sessionKey+"track"+track+API_SECRET);
 								;
+
 			System.out.println(MAIN_URL);
 			System.out.println(parameters);
 			HttpURLConnection connection = getConnection(url,parameters);
