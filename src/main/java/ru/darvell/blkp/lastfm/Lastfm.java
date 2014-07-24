@@ -25,8 +25,8 @@ import java.util.TreeSet;
  */
 
 public class Lastfm {
-	private static final String API_KEY = "310fef49182709ec7f0a2e44fc82b9fa";
-	private static final String API_SECRET = "37e759a0b0ba2215937e779d21ebe9e1";
+	private static final String API_KEY = "5c62eb1d20c97d636b2845a506189df2";
+	private static final String API_SECRET = "41eb7bbcbae6b1c8e800a577969832df";
 
 	private static final String MAIN_URL = "http://ws.audioscrobbler.com/2.0/";
 	private static final String AUTH_METOD = "auth.getMobileSession";
@@ -44,11 +44,13 @@ public class Lastfm {
 		this.usrname = usrname;
 		this.usrpasswd = usrpasswd;
 		String s;
+
 		if ((s = getAuth()) != null){
 			this.sessionKey = s;
 		}else{
 			throw new LastFMException("don't connect to LastFM");
 		}
+
 	}
 
 	public String getSessionKey(){
@@ -114,7 +116,7 @@ public class Lastfm {
 			byte[] postDataBytes = buildPostBody(parameters).getBytes("UTF-8");
 			connection.getOutputStream().write(postDataBytes);
 			int responseCode = connection.getResponseCode();
-			log.info("Response code " + responseCode);
+			log.info("Response code "+parameters.get("method")+" "+ responseCode);
 
 			if(responseCode == 200 ){
 				return connection;

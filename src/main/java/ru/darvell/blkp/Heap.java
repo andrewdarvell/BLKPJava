@@ -1,6 +1,9 @@
 package ru.darvell.blkp;
 
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,21 +13,23 @@ import java.util.ArrayList;
  * Uses to storing commands
  */
 public class Heap {
-	ArrayList<String> commands;
+	private static Logger log = Logger.getLogger(Heap.class.getName());
+
+	private ArrayList<Map<String,String>> commands;
 
 	public Heap(){
 		System.out.println("heap create");
-		this.commands = new ArrayList<String>();
+		this.commands = new ArrayList<Map<String, String>>();
 	}
 
-	synchronized public boolean addCommand(String newCmd){
+	synchronized public boolean addCommand(Map<String,String> newCmd){
 		commands.add(newCmd);
 		return true;
 	}
 
-	synchronized public String getCommand(){
+	synchronized public Map<String,String> getCommand(){
 		if(this.commands.size()>0){
-			String cmd = commands.get(commands.size()-1);
+			Map<String,String> cmd = commands.get(commands.size()-1);
 			commands.remove(commands.size()-1);
 			return cmd;
 		}

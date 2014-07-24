@@ -1,8 +1,13 @@
 package ru.darvell.blkp;
 
+import org.apache.log4j.Logger;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Pattern;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,11 +18,12 @@ import java.net.Socket;
  */
 public class SocketWorker extends Thread{
 
+	private static Logger log = Logger.getLogger(SocketWorker.class.getName());
+
 	Socket socket;
 	Heap heap;
 
 	public SocketWorker(Socket socket, Heap heap){
-		//System.out.println("SocketWorker create");
 		this.socket = socket;
 		this.heap = heap;
 		setDaemon(true);
@@ -27,27 +33,46 @@ public class SocketWorker extends Thread{
 	@Override
 	public void run() {
 		try{
-			//System.out.println("Start Thread");
+
 			InputStream inputStream = socket.getInputStream();
 			OutputStream outputStream = socket.getOutputStream();
 
 
 			byte buf[] = new byte[64*1024];
 			int len = inputStream.read(buf);
+
+
 			String message = new String(buf,0,len-1);
 
-			heap.addCommand(message);
+			if (message.length() != 0){
+				String resp = "Ok";
+				outputStream.write(resp.getBytes());
+				outputStream.close();
+				log.info("got command "+message);
 
-			//System.out.println(message);
-			String resp = "Ok";
-			outputStream.write(resp.getBytes());
+				if(Pattern.matches("^P_.*$",message)){
 
+					Map<String,String> map = new HashMap();
+					String[] commands = message.split("P_");
 
-			//System.out.println("Stop Thread");
+					map.put("time",commands[1]);
+					String[] artist_track = commands[2].split("\\s-\\s");
+
+					map.put("artist", artist_track[0]);
+					map.put("track", artist_track[0]);
+					map.put("command","play");
+					heap.addCommand(map);
+				}
+				if(Pattern.matches("^S_.*$",message)){
+					Map<String,String> map = new HashMap();
+					map.put("command","stop");
+					heap.addCommand(map);
+				}
+			}
 			inputStream.close();
 			socket.close();
 		}catch (Exception e){
-			System.out.println("Exception in Thread: "+e.getMessage());
+			log.error(e.toString());
 		}
 	}
 }

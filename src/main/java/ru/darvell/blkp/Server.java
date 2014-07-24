@@ -9,6 +9,7 @@ import java.net.ServerSocket;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.regex.Pattern;
 
 
 /**
@@ -40,6 +41,7 @@ public class Server {
 			//new Arduino(heap);
 
 			Lastfm lastfm = new Lastfm("RottenDarvell", "zghjcnjvjcmrf");
+			//lastfm.sendNowPlay("LetzteInstanz","Winterträn");
 
 			GregorianCalendar gregorianCalendar = new GregorianCalendar();
 
@@ -47,7 +49,7 @@ public class Server {
 			int timestamp = (int) (new Date().getTime()/1000);
 
 
-			lastfm.sendScrobble("LetzteInstanz","Winterträn",timestamp);
+			//lastfm.sendScrobble("LetzteInstanz","Winterträn",timestamp);
 			new Worker(heap,lastfm);
 
 			while(true){
