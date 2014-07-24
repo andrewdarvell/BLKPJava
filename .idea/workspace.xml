@@ -11,7 +11,7 @@
     <file path="/Heap.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405085047382" ignored="false" />
     <file path="/Worker.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405596353772" ignored="false" />
     <file path="/Arduino.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405343854967" ignored="false" />
-    <file path="/Lastfm.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406123182954" ignored="false" />
+    <file path="/Lastfm.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406188700628" ignored="false" />
     <file path="/MD5.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405414727626" ignored="false" />
     <file path="/AuthResp.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405595224743" ignored="false" />
     <file path="/SaxLastFM.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405592582309" ignored="false" />
@@ -80,10 +80,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Server.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Server.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="14" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
+            <state line="23" column="59" selection-start="483" selection-end="483" vertical-scroll-proportion="0.51282054">
               <folding />
             </state>
           </provider>
@@ -98,10 +98,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lastfm.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Lastfm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/lastfm/Lastfm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="152" column="87" selection-start="4451" selection-end="4451" vertical-scroll-proportion="0.102564104">
+            <state line="153" column="46" selection-start="4628" selection-end="4628" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -171,7 +171,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -182,20 +182,7 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BLKPLastFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -212,9 +199,9 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Server">
     <configuration default="false" name="Server" type="Application" factoryName="Application" temporary="true">
@@ -253,6 +240,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -278,19 +278,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -341,6 +328,23 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ac14b1e6-78e0-4660-9b0d-af835c682596" name="Default" comment="" />
@@ -516,16 +520,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/lastfm/Lastfm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="14" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
+        <state line="153" column="46" selection-start="4628" selection-end="4628" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/lastfm/Lastfm.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/darvell/blkp/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="87" selection-start="4451" selection-end="4451" vertical-scroll-proportion="0.102564104">
+        <state line="23" column="59" selection-start="483" selection-end="483" vertical-scroll-proportion="0.51282054">
           <folding />
         </state>
       </provider>

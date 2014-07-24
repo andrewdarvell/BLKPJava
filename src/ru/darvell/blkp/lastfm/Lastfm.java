@@ -103,31 +103,27 @@ public class Lastfm {
 		}
 	}
 
-	HttpURLConnection getConnection (URL url,String parameters){
+	HttpURLConnection getConnection (URL url,Map<String,String> parameters){
 		try {
 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-			connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-
-			byte[] postDataBytes = parameters.getBytes("UTF-8");
-			connection.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
-
-
-
 			connection.setRequestMethod("POST");
-			connection.setDoInput(true);
 			connection.setDoOutput(true);
-
-
+			byte[] postDataBytes = buildPostBody(parameters).getBytes("UTF-8");
 			connection.getOutputStream().write(postDataBytes);
 			int responseCode = connection.getResponseCode();
 			System.out.println(responseCode);
-			/*
+
 			if(responseCode == 200 ){
 				return connection;
-			}else return null;
-			*/
-			return connection;
+			}else{
+				InputStream is = connection.getErrorStream();
+				byte[] buff = new byte[64*1024];
+				int i = is.read(buff);
+				String mess = new String(buff,0,i);
+				System.out.println("Error UPDATE NOW code = "+responseCode+" "+mess);
+				return null;
+			}
 
 		}catch (Exception e){
 			System.out.println("Exception: "+e.getMessage());
@@ -141,21 +137,21 @@ public class Lastfm {
 		try{
 			URL url = new URL(null, MAIN_URL,new sun.net.www.protocol.https.Handler());
 
-			Map<String,String> params = new HashMap<>();
-			params.put("api_key",API_KEY);
-			params.put("method", AUTH_METOD);
-			params.put("password",usrpasswd);
-			params.put("username",usrname);
-			params.put("api_sig",getSignature(params));
+			Map<String,String> parameters = new HashMap<>();
+			parameters.put("api_key", API_KEY);
+			parameters.put("method", AUTH_METOD);
+			parameters.put("password", usrpasswd);
+			parameters.put("username", usrname);
+			parameters.put("api_sig", getSignature(parameters));
 
-			HttpsURLConnection connection = getConnectionSSL(url,params);
+			HttpsURLConnection connection = getConnectionSSL(url,parameters);
 			if(connection != null ){
 				AuthResp authResp = Parsers.parseAuthResp(connection.getInputStream());
 				key = authResp.getKey();
 			}
 			connection.disconnect();
 		}catch (Exception e){
-			System.out.println("Error: "+e.getMessage());
+			System.out.println("Error get AUTH: "+e.getMessage());
 		}
 		return key;
 	}
@@ -164,36 +160,23 @@ public class Lastfm {
 
 	public void sendNowPlay(String artist, String track){
 		try{
-
 			URL url = new URL(MAIN_URL);
-			//URL url = new URL(null, MAIN_URL,new sun.net.www.protocol.http.Handler());
-			String parameters = "method="+ UPD_NOW_PLNG_METHOD
-								+"&artist="+artist
-								+"&track="+track
-								+"&sk="+sessionKey
-								+"&api_key="+API_KEY
-								+"&api_sig="+MD5.getMd5("api_key"+API_KEY+"artist"+artist+"method"+UPD_NOW_PLNG_METHOD+"sk"+sessionKey+"track"+track+API_SECRET);
-								;
+			Map<String,String> parameters = new HashMap<>();
+			parameters.put("method", UPD_NOW_PLNG_METHOD);
+			parameters.put("artist", artist);
+			parameters.put("track", track);
+			parameters.put("sk", sessionKey);
+			parameters.put("api_key", API_KEY);
+			parameters.put("api_sig", getSignature(parameters));
 
-			System.out.println(MAIN_URL);
-			System.out.println(parameters);
+
 			HttpURLConnection connection = getConnection(url,parameters);
 
 			if(connection != null ){
-				InputStream is = connection.getInputStream();
-				NowPlngResp nowPlngResp = Parsers.parseNowPlngResp(is);
+				NowPlngResp nowPlngResp = Parsers.parseNowPlngResp(connection.getInputStream());
 				System.out.println(nowPlngResp.getArtist());
-				is.close();
 			}
 
-
-			/*
-			InputStream inputStream = connection.getErrorStream();
-			byte buff[] = new byte[64*1024];
-			int count = inputStream.read(buff);
-			System.out.println(new String(buff,0,count));
-			inputStream.close();
-            */
 		}catch (Exception e){
 			System.out.println("Error: "+e.toString());
 		}
