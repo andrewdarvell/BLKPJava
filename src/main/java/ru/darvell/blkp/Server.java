@@ -1,15 +1,21 @@
 package ru.darvell.blkp;
 
+
+
+import jouvieje.bass.BassInit;
+import jouvieje.bass.structures.HSTREAM;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import ru.darvell.blkp.lastfm.Lastfm;
-import ru.darvell.blkp.serialport.Arduino;
+
 
 import java.net.ServerSocket;
-import java.util.Calendar;
+
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.regex.Pattern;
+
+
+import static jouvieje.bass.Bass.*;
 
 
 /**
@@ -39,6 +45,27 @@ public class Server {
 			Heap heap = new Heap();
 
 			//new Arduino(heap);
+			//Player player = new Player(new URL("http://streams.balboatech.com:8000/").openStream());
+			//URLConnection urlConnection = new URL("http://radio.flex.ru:8000/radionami").openConnection();
+			//URLConnection urlConnection = new URL("http://streams.balboatech.com:8000").openConnection();
+			//urlConnection.connect();
+
+			BassInit.loadLibraries();
+
+
+			if(((BASS_GetVersion() & 0xFFFF0000) >> 16) != BassInit.BASSVERSION()) {
+				log.error("An incorrect version of BASS.DLL was loaded");
+				return;
+			}
+
+			if (!BASS_Init(1, 44100, 0, null, null)) {
+				log.error("Can't initialize device");
+				return;
+			}
+
+			HSTREAM hstream = BASS_StreamCreateURL("http://streams.balboatech.com:8000/",0,0,null,null);
+			BASS_ChannelPlay(hstream.asInt(),true);
+
 
 			Lastfm lastfm = new Lastfm("RottenDarvell", "zghjcnjvjcmrf");
 			//lastfm.sendNowPlay("LetzteInstanz","Winterträn");

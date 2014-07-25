@@ -6,7 +6,12 @@
 
     <groupId>ru.darvell.blkp</groupId>
     <artifactId>BlackPlayer</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>BLKPr-1.0</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<jdk.version>1.7</jdk.version>
+	</properties>
 
 	<build>
 		<plugins>
@@ -20,6 +25,49 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>ru.darvell.blkp.Server</mainClass>
+							<!--packageName>ru.darvell.blkp</packageName>
+							<classpathLayoutType>simple</classpathLayoutType-->
+							<classpathPrefix>libs/</classpathPrefix>
+						</manifest>
+					</archive>
+
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<outputDirectory>${project.build.directory}/libs</outputDirectory>
+					<!--includeGroupIds>bass</includeGroupIds-->
+					<includeScope>compile</includeScope>
+					<!--overWriteReleases>true</overWriteReleases>
+					<overWriteSnapshots>true</overWriteSnapshots>
+					<overWriteIfNewer>true</overWriteIfNewer-->
+				</configuration>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 
@@ -36,6 +84,31 @@
 			<artifactId>rxtx</artifactId>
 			<version>2.1.7</version>
 		</dependency>
+
+		<dependency>
+			<groupId>jouvieje.bass</groupId>
+			<artifactId>Bass</artifactId>
+			<scope>system</scope>
+			<systemPath>${basedir}/libs/NativeBass.jar</systemPath>
+			<version>1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>libbas.so</groupId>
+			<artifactId>BassN</artifactId>
+			<scope>system</scope>
+			<systemPath>${basedir}/libs/NativeBass-linux64.jar</systemPath>
+			<version>1.1</version>
+		</dependency>
+
+
+		   <!--
+
+		      mvn install:install-file -Dfile=/home/darvell/java/BASS/NativeBass-1.1.2/NativeBass-1.1.2/lib/NativeBass.jar -DgroupId=jouvieje.bass -DartifactId=Bass -Dversion=1.0 -Dpackaging=jar
+
+
+		   -->
+
 
 	</dependencies>
     

@@ -50,7 +50,7 @@ public class Arduino implements Runnable{
 			while (runnig){
 				byte buff[] = new byte[64*1024];
 				int length = inputStream.read(buff);
-				heap.addCommand(new String(buff,0,length));
+				//heap.addCommand(new String(buff,0,length));
 				if (!command.equals("")){
 					System.out.println("doCommand");
 					setCommand("");
