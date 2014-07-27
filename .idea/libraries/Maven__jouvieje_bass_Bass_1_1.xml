@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Maven: jouvieje.bass:Bass:1.1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/NativeBass.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

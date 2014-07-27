@@ -4,6 +4,7 @@ package ru.darvell.blkp.serialport;
 import gnu.io.CommPortIdentifier;
 import gnu.io.NoSuchPortException;
 import gnu.io.SerialPort;
+import org.apache.log4j.Logger;
 import ru.darvell.blkp.Heap;
 
 import java.io.*;
@@ -15,7 +16,9 @@ import java.io.*;
  * Time: 16:28
  * Module SEND and GET commands from Arduino
  */
-public class Arduino implements Runnable{
+public class Arduino extends Thread{
+
+    private static Logger log = Logger.getLogger(Arduino.class.getName());
 
 	CommPortIdentifier portId;
 	String command;
@@ -25,19 +28,21 @@ public class Arduino implements Runnable{
 
 	public Arduino(Heap heap) throws NoSuchPortException {
 
-		//System.setProperty("gnu.io.rxtx.SerialPorts", "/dev/ttyACM0");
-		System.setProperty("gnu.io.rxtx.SerialPorts", "/dev/tty0");
-		//portId = CommPortIdentifier.getPortIdentifier("/dev/ttyACM0");
-		portId = CommPortIdentifier.getPortIdentifier("/dev/tty0");
+		System.setProperty("gnu.io.rxtx.SerialPorts", "/dev/ttyACM0");
+		//System.setProperty("gnu.io.rxtx.SerialPorts", "/dev/tty0");
+		portId = CommPortIdentifier.getPortIdentifier("/dev/ttyACM0");
+		//portId = CommPortIdentifier.getPortIdentifier("/dev/tty0");
 		this.heap = heap;
-		t = Thread.currentThread();
+		t = this;
 		t.setDaemon(true);
 		t.start();
+        log.info("Arduino create");
 	}
 
 	@Override
 	public void run() {
 		try{
+
 			SerialPort serialPort =(SerialPort) portId.open("Demo application", 9600);
 			runnig = true;
 			OutputStream outstream = serialPort.getOutputStream();
@@ -49,7 +54,7 @@ public class Arduino implements Runnable{
 
 			while (runnig){
 				byte buff[] = new byte[64*1024];
-				int length = inputStream.read(buff);
+				//int length = inputStream.read(buff);
 				//heap.addCommand(new String(buff,0,length));
 				if (!command.equals("")){
 					System.out.println("doCommand");
@@ -59,8 +64,9 @@ public class Arduino implements Runnable{
 			}
 			serialPort.close();
 
+            log.info("djskd");
 		}catch (Exception e){
-			System.out.println("Serial error: "+e.getMessage());
+			log.error(e.toString());
 		}
 	}
 

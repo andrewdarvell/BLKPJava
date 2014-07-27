@@ -9,30 +9,6 @@
     <list default="true" id="ac14b1e6-78e0-4660-9b0d-af835c682596" name="Default" comment="" />
     <ignored path="BLKPLastFM.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Main.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405076761239" ignored="false" />
-    <file path="/Door.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405071704125" ignored="false" />
-    <file path="/Server.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406287613280" ignored="false" />
-    <file path="/SocketWorker.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406209754326" ignored="false" />
-    <file path="/Heap.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406202465054" ignored="false" />
-    <file path="/Worker.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406210442894" ignored="false" />
-    <file path="/Arduino.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405343854967" ignored="false" />
-    <file path="/Lastfm.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406209637358" ignored="false" />
-    <file path="/MD5.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405414727626" ignored="false" />
-    <file path="/AuthResp.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405595224743" ignored="false" />
-    <file path="/SaxLastFM.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405592582309" ignored="false" />
-    <file path="/Parsers.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406198316662" ignored="false" />
-    <file path="/NowPlngResp.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406196199979" ignored="false" />
-    <file path="/fragment.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405600897817" ignored="false" />
-    <file path="/a.dummy" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405601365319" ignored="false" />
-    <file path="/MysqlBase.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1405670721332" ignored="false" />
-    <file path="/pom.xml" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406294949887" ignored="false" />
-    <file path="/log4j-config.xml" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406191703721" ignored="false" />
-    <file path="/ScrobblingResp.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406198301524" ignored="false" />
-    <file path="/RegExp Fragment (SocketWorker.java:1036).regexp" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406204734884" ignored="false" />
-    <file path="/RegExp Fragment (SocketWorker.java:1035).regexp" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406204952829" ignored="false" />
-    <file path="/RegExp Fragment (SocketWorker.java:1068).regexp" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406205790552" ignored="false" />
-    <file path="/NetRadio.java" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406286777391" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="ac14b1e6-78e0-4660-9b0d-af835c682596" time="1406296460243" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +77,7 @@
       <file leaf-file-name="Server.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="12" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.0">
+            <state line="29" column="73" selection-start="429" selection-end="498" vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="1692">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,11 +85,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="Arduino.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/serialport/Arduino.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="38" selection-start="2173" selection-end="2173" vertical-scroll-proportion="0.3444056">
+            <state line="26" column="13" selection-start="546" selection-end="546" vertical-scroll-proportion="0.3802817" vertical-offset="117" max-vertical-offset="1368">
+              <folding>
+                <element signature="e#1745#1746#0" expanded="true" />
+                <element signature="e#1774#1775#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocketWorker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/SocketWorker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="31" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1386">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Worker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/Worker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="0" selection-start="906" selection-end="906" vertical-scroll-proportion="0.0" vertical-offset="213" max-vertical-offset="1422">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,7 +120,7 @@
       <file leaf-file-name="BLKPLastFM.iml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BLKPLastFM.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.0">
+            <state line="18" column="0" selection-start="1031" selection-end="1031" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="432">
               <folding />
             </state>
           </provider>
@@ -147,12 +146,12 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/darvell/blkp/lastfm/Lastfm.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/darvell/blkp/SocketWorker.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/darvell/blkp/Worker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/darvell/blkp/serialport/Arduino.java" />
         <option value="$USER_HOME$/java/BASS/NativeBass-1.1.2/NativeBass-1.1.2/src/examples/jouvieje/bass/examples/NetRadio.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/darvell/blkp/Server.java" />
         <option value="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/BLKPLastFM.iml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/darvell/blkp/Server.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/darvell/blkp/serialport/Arduino.java" />
       </list>
     </option>
   </component>
@@ -199,8 +198,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="1004" />
+    <option name="y" value="25" />
+    <option name="width" value="1680" />
+    <option name="height" value="1025" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -228,8 +228,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -248,15 +246,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: log4j:log4j:1.2.17" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="log4j-1.2.17.jar" />
+              <option name="myItemId" value="BLKPJava" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -266,49 +256,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BLKPLastFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BLKPLastFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BLKPLastFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BLKPLastFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BLKPLastFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BLKPLastFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BLKPLastFM" />
+              <option name="myItemId" value="BLKPJava" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -323,23 +271,9 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BLKPLastFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BLKPLastFM" />
+              <option name="myItemId" value="blkp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NativeBass-linux64.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -348,16 +282,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BLKPLastFM" />
+              <option name="myItemId" value="BLKPJava" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blkp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serialport" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,7 +322,7 @@
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.keymap" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/NativeBass-linux64.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="project.structure.side.proportion" value="0.25539568" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -406,10 +358,30 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
@@ -442,6 +414,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -467,19 +452,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -514,6 +486,25 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <list size="1">
@@ -576,87 +567,47 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="1004" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="25" width="1680" height="1025" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.71378505" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995327" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.71378505" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827103" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.12733644" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.71378505" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959481" sideWeight="0.71378505" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28621495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24940476" sideWeight="0.71378505" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28617364" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USERS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
-      <value>
-        <are-packages-shown value="false" />
-        <are-modules-shown value="false" />
-        <flatten-packages value="false" />
-        <is-autoscroll-to-source value="false" />
-      </value>
+      <TodoPanelSettings />
     </option>
-    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
-    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
-    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
-    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
-    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
-    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
-    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
-    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
-    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
-    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
-    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
-    <option name="LIMIT_HISTORY" value="true" />
-    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
-    <option name="UPDATE_FILTER_SCOPE_NAME" />
-    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
-    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
-    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
-    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
-    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
-    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
-    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
-    <option name="ACTIVE_VCS_NAME" />
-    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
-    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
-    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
-    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
-    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -666,54 +617,46 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../mmsn/pooler/current/src/pooler/DB.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="76" selection-start="3686" selection-end="3686" vertical-scroll-proportion="0.35897437" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/Heap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="53" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0">
+        <state line="68" column="0" selection-start="1756" selection-end="1756" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1638">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/Worker.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="20" selection-start="906" selection-end="906" vertical-scroll-proportion="0.5673759">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/SocketWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="33" selection-start="1203" selection-end="1207" vertical-scroll-proportion="0.0">
+        <state line="78" column="37" selection-start="2173" selection-end="2173" vertical-scroll-proportion="0.0" vertical-offset="1404" max-vertical-offset="2160">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/java/BASS/NativeBass-1.1.2/NativeBass-1.1.2/src/examples/jouvieje/bass/examples/NetRadio.java">
+    <entry file="file://$PROJECT_DIR$/BLKPLastFM.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="29" selection-start="5390" selection-end="5398" vertical-scroll-proportion="0.33333334" />
+        <state line="20" column="0" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="468">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/serialport/Arduino.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/Heap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="81" selection-start="1425" selection-end="1425" vertical-scroll-proportion="1.4102564" />
+        <state line="15" column="53" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/libs/NativeBass.jar!/org/jouvieje/libloader/LibLoader.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="171" selection-end="171" vertical-scroll-proportion="-0.19195612" />
+        <state line="6" column="19" selection-start="171" selection-end="171" vertical-scroll-proportion="-0.19195612" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/lastfm/Lastfm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="87" selection-start="4108" selection-end="4108" vertical-scroll-proportion="0.33216783">
+        <state line="141" column="87" selection-start="4108" selection-end="4108" vertical-scroll-proportion="0.33216783" vertical-offset="0" max-vertical-offset="0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -722,59 +665,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../serialTest/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="98" selection-start="2887" selection-end="2887" vertical-scroll-proportion="0.686747">
+        <state line="66" column="98" selection-start="2887" selection-end="2887" vertical-scroll-proportion="0.686747" vertical-offset="0" max-vertical-offset="0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="12" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/libs/NativeBass.jar!/jouvieje/bass/BassInit.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.13392857">
-          <folding />
-        </state>
+        <state line="6" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.13392857" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/libs/NativeBass.jar!/jouvieje/bass/Bass.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.027422303">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="0.07692308">
-          <folding />
-        </state>
+        <state line="6" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.027422303" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BLKPLastFM.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.0">
+        <state line="18" column="0" selection-start="1031" selection-end="1031" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="432">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/libs/NativeBass-linux64.jar!/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="38" selection-start="2173" selection-end="2173" vertical-scroll-proportion="0.3444056">
+        <state line="101" column="22" selection-start="2744" selection-end="2744" vertical-scroll-proportion="0.8801917" vertical-offset="1267" max-vertical-offset="2160">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="73" selection-start="429" selection-end="498" vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="1692">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/Worker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="0" selection-start="906" selection-end="906" vertical-scroll-proportion="0.0" vertical-offset="213" max-vertical-offset="1422">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/SocketWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="31" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/darvell/blkp/serialport/Arduino.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="13" selection-start="546" selection-end="546" vertical-scroll-proportion="0.3802817" vertical-offset="117" max-vertical-offset="1368">
+          <folding>
+            <element signature="e#1745#1746#0" expanded="true" />
+            <element signature="e#1774#1775#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -837,7 +793,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -845,7 +801,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: org.rxtx:rxtx:2.1.7</last-edited>
+          <last-edited>Maven: log4j:log4j:1.2.17</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

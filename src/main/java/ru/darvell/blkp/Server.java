@@ -2,11 +2,11 @@ package ru.darvell.blkp;
 
 
 
-import jouvieje.bass.BassInit;
-import jouvieje.bass.structures.HSTREAM;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import ru.darvell.blkp.lastfm.Lastfm;
+import ru.darvell.blkp.serialport.Arduino;
 
 
 import java.net.ServerSocket;
@@ -15,7 +15,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 
-import static jouvieje.bass.Bass.*;
 
 
 /**
@@ -44,12 +43,13 @@ public class Server {
 			System.out.println("server is started");
 			Heap heap = new Heap();
 
-			//new Arduino(heap);
+			new Arduino(heap);
 			//Player player = new Player(new URL("http://streams.balboatech.com:8000/").openStream());
 			//URLConnection urlConnection = new URL("http://radio.flex.ru:8000/radionami").openConnection();
 			//URLConnection urlConnection = new URL("http://streams.balboatech.com:8000").openConnection();
 			//urlConnection.connect();
 
+            /*
 			BassInit.loadLibraries();
 
 
@@ -65,7 +65,7 @@ public class Server {
 
 			HSTREAM hstream = BASS_StreamCreateURL("http://streams.balboatech.com:8000/",0,0,null,null);
 			BASS_ChannelPlay(hstream.asInt(),true);
-
+            */
 
 			Lastfm lastfm = new Lastfm("RottenDarvell", "zghjcnjvjcmrf");
 			//lastfm.sendNowPlay("LetzteInstanz","Winterträn");
@@ -83,7 +83,7 @@ public class Server {
 				new SocketWorker(serverSocket.accept(), heap);
 			}
 		}catch (Exception e){
-			log.error(e.getMessage());
+			log.error(e.toString());
 		}
 	}
 }

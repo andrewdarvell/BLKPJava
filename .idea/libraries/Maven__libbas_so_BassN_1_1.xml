@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Maven: libbas.so:BassN:1.1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/NativeBass-linux64.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
