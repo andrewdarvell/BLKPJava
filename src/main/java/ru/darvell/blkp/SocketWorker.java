@@ -56,15 +56,18 @@ public class SocketWorker extends Thread{
 					String[] commands = message.split("P_");
 
 					map.put("time",commands[1]);
+					map.put("id",commands[1]);
 					String[] artist_track = commands[2].split("\\s-\\s");
 
 					map.put("artist", artist_track[0]);
-					map.put("track", artist_track[0]);
+					map.put("track", artist_track[1]);
 					map.put("command","play");
 					heap.addCommand(map);
 				}
 				if(Pattern.matches("^S_.*$",message)){
 					Map<String,String> map = new HashMap();
+					String[] command = message.split("_");
+					map.put("id",command[1]);
 					map.put("command","stop");
 					heap.addCommand(map);
 				}

@@ -29,8 +29,9 @@ public class Heap {
 
 	synchronized public Map<String,String> getCommand(){
 		if(this.commands.size()>0){
-			Map<String,String> cmd = commands.get(commands.size()-1);
-			commands.remove(commands.size()-1);
+
+			Map<String,String> cmd = commands.get(0);
+			commands.remove(0);
 			return cmd;
 		}
 		return null;

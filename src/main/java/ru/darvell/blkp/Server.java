@@ -9,8 +9,11 @@ import ru.darvell.blkp.lastfm.Lastfm;
 import ru.darvell.blkp.serialport.Arduino;
 
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.ServerSocket;
 
+import java.net.Socket;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -43,45 +46,26 @@ public class Server {
 			System.out.println("server is started");
 			Heap heap = new Heap();
 
-			new Arduino(heap);
-			//Player player = new Player(new URL("http://streams.balboatech.com:8000/").openStream());
-			//URLConnection urlConnection = new URL("http://radio.flex.ru:8000/radionami").openConnection();
-			//URLConnection urlConnection = new URL("http://streams.balboatech.com:8000").openConnection();
-			//urlConnection.connect();
+			//new Arduino(heap);
 
-            /*
-			BassInit.loadLibraries();
-
-
-			if(((BASS_GetVersion() & 0xFFFF0000) >> 16) != BassInit.BASSVERSION()) {
-				log.error("An incorrect version of BASS.DLL was loaded");
-				return;
-			}
-
-			if (!BASS_Init(1, 44100, 0, null, null)) {
-				log.error("Can't initialize device");
-				return;
-			}
-
-			HSTREAM hstream = BASS_StreamCreateURL("http://streams.balboatech.com:8000/",0,0,null,null);
-			BASS_ChannelPlay(hstream.asInt(),true);
-            */
 
 			Lastfm lastfm = new Lastfm("RottenDarvell", "zghjcnjvjcmrf");
-			//lastfm.sendNowPlay("LetzteInstanz","Winterträn");
 
-			GregorianCalendar gregorianCalendar = new GregorianCalendar();
-
-
-			int timestamp = (int) (new Date().getTime()/1000);
-
-
-			//lastfm.sendScrobble("LetzteInstanz","Winterträn",timestamp);
 			new Worker(heap,lastfm);
+			//new Worker(heap,lastfm,arduino);
+			/*
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+			String s="hello";
+			Socket socket = new Socket("localhost",3426);
+			socket.getOutputStream().write(s.getBytes());
+			socket.close();
+            */
 
 			while(true){
 				new SocketWorker(serverSocket.accept(), heap);
 			}
+
+
 		}catch (Exception e){
 			log.error(e.toString());
 		}

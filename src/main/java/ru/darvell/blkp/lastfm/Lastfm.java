@@ -116,7 +116,7 @@ public class Lastfm {
 			byte[] postDataBytes = buildPostBody(parameters).getBytes("UTF-8");
 			connection.getOutputStream().write(postDataBytes);
 			int responseCode = connection.getResponseCode();
-			log.info("Response code "+parameters.get("method")+" "+ responseCode);
+			//log.info("Response code "+parameters.get("method")+" "+ responseCode);
 
 			if(responseCode == 200 ){
 				return connection;
