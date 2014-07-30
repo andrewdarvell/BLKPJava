@@ -4,6 +4,9 @@ import org.apache.log4j.Logger;
 import ru.darvell.blkp.lastfm.Lastfm;
 import ru.darvell.blkp.serialport.Arduino;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,11 +57,18 @@ public class Worker extends Thread{
 			while(true){
 
 				if(heap.getCount()>0){
-					 Map<String,String> command = heap.getCommand();
+					Map<String,String> command = heap.getCommand();
+					log.info("got command: "+command.get("command"));
 					switch (command.get("command")){
 						case "play": doPlay(command);
 							break;
 						case "stop": doStop(command);
+							break;
+						case "sendPlayerStop": sendCommand("s");
+							break;
+						case "sendPlayerPlay": sendCommand("p");
+							break;
+						case "sendPlayerNext": sendCommand("n");
 							break;
 					}
 				}
@@ -99,6 +109,32 @@ public class Worker extends Thread{
 	void update(){
 		if (play){
 			lastfm.sendNowPlay(nowPlay.get("artist"),nowPlay.get("track"));
+		}
+	}
+
+	void sendCommand(String commandStr){
+		try{
+			File lock = new File("//home/darvell/cProjects/basst/mediaRPI/CRadio/lock");
+			lock.createNewFile();
+			if(lock.exists()){
+				log.info("lock exist");
+			}
+
+			File command = new File("/home/darvell/cProjects/basst/mediaRPI/CRadio/command");
+			if (command.exists()){
+				command.delete();
+			}else {
+				command.createNewFile();
+			}
+
+			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(command));
+
+			bufferedWriter.write(commandStr);
+			bufferedWriter.close();
+			lock.delete();
+			log.info("Sended command to player: "+commandStr);
+		}catch (Exception e){
+			log.error(e.toString());
 		}
 	}
 }

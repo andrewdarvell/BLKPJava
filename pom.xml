@@ -35,7 +35,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>ru.darvell.blkp.Server</mainClass>
+							<mainClass>ru.darvell.blkp.BLKPjava</mainClass>
 							<!--packageName>ru.darvell.blkp</packageName>
 							<classpathLayoutType>simple</classpathLayoutType-->
 							<classpathPrefix>libs/</classpathPrefix>
