@@ -1,0 +1,140 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+
+String testB;
+String command;
+String fst;
+String sst;
+
+LiquidCrystal_I2C lcd(0x27,16,2);
+
+
+void setup(){
+  lcd.init();
+  lcd.backlight();
+  Serial.begin(9600);
+  fst="";
+  sst="";
+}
+
+void loop(){
+
+
+
+  while (Serial.available()) {
+    delay(3);  //delay to allow buffer to fill
+    char c = Serial.read();
+    testB="";
+    testB += c;
+
+    if(testB == "s"){
+      command = "";
+      while(testB != ";"){
+        delay(3);
+        char c = Serial.read();
+        testB="";
+        testB += c;
+        //command+=testB;
+        if(testB != ";"){
+          command += testB;
+        }
+      }
+    }
+    String comm = command.substring(0,3);
+    String par = command.substring(3,command.length());
+    Serial.println(comm+"_"+par);
+    printLcdFst(comm+"_"+par);
+    if(comm == "fst"){
+      fst = par;
+      lcd.clear();
+      printLcdFst(fst);
+      printLcdScd(sst);
+    }else if(comm == "sst"){
+      sst = par;
+      lcd.clear();
+      printLcdFst(fst);
+      printLcdScd(sst);
+
+//    }else if(comm == "mvl"){
+
+//    }else if(comm == "mvr"){
+
+//    }else if(comm == "mvo"){
+
+    }
+
+
+  }
+
+
+
+
+  //dist = getDistance();
+  //Serial.println("Hi");
+
+
+  //Serial.println("Hi");
+
+
+  //delay(500);
+  //lcd.clear();
+  //lcd.setCursor(0,0);
+  //lcd.print(dist);
+
+  /*
+  if(!despair){
+    dist = getDistance();
+    printLcd(String(dist));
+
+
+    if(dist > 100){
+      moveForward(240);
+      printLcd(">100");
+      delay(200);
+    }
+    if((dist > 20)&&(dist < 100)){
+      moveForward(180);
+      printLcd(">40 <100");
+      delay(200);
+    }
+
+    if(dist <= 20){
+      enginesStop();
+      printLcd("<=20");
+      delay(500);
+      int trying = 0;
+      while((dist<=20) && (trying < 20)){
+        enginesStop();
+        moveBackward(180);
+        delay(500);
+        enginesStop();
+        delay(500);
+        rotateLeft(500);
+        enginesStop();
+        delay(500);
+        dist = getDistance();
+        printLcd("try_"+String(trying)+" dst_"+String(dist));
+        trying++;
+      }
+      if(trying>=20){
+        despair = true;
+        printLcd("despair");
+      }else{
+        moveForward(180);
+      }
+    }
+  }*/
+
+}
+
+void printLcdFst(String s){
+  //lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print(s);
+}
+void printLcdScd(String s){
+  //lcd.clear();
+  lcd.setCursor(0,1);
+  lcd.print(s);
+}
