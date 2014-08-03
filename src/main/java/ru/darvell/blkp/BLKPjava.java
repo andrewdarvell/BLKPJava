@@ -6,6 +6,7 @@ package ru.darvell.blkp;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import ru.darvell.blkp.lastfm.Lastfm;
+import ru.darvell.blkp.serialport.Arduino;
 
 
 import java.io.*;
@@ -40,13 +41,13 @@ public class BLKPjava {
 
 			Heap heap = new Heap();
 
-			//new Arduino(heap);
+			Arduino arduino = new Arduino(heap);
 
 
 			Lastfm lastfm = new Lastfm("RottenDarvell", "zghjcnjvjcmrf");
 
-			new Worker(heap,lastfm);
-			//new Worker(heap,lastfm,arduino);
+			//new Worker(heap,lastfm);
+			new Worker(heap,lastfm,arduino);
 			new Server(heap);
 
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));

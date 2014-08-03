@@ -23,7 +23,7 @@ public class Arduino extends Thread{
     private static Logger log = Logger.getLogger(Arduino.class.getName());
 
 	CommPortIdentifier portId;
-	ArrayList<Map<String,String>> commands;
+	private ArrayList<Map<String,String>> commands;
 	boolean runnig;
 	Heap heap;
 	Thread t;
@@ -53,22 +53,28 @@ public class Arduino extends Thread{
 			InputStream inputStream = serialPort.getInputStream();
 			Thread.sleep(5000);
 
-			outstream.write("s100200p".getBytes());
+			outstream.write("sfstRunning;".getBytes());
 			Thread.sleep(3000);
 
 			while (runnig){
-				byte buff[] = new byte[64*1024];
+				//byte buff[] = new byte[64*1024];
 				//int length = inputStream.read(buff);
 				//heap.addCommand(new String(buff,0,length));
-				Map<String,String> command = getCommand();
-				if(command!=null){
-				    String commandName = command.get("name");
-					switch (commandName){
-						case "show":doShow(command, outstream);
-							break;
-					}
-				}
-				t.wait(500);
+                if(getCommandsCount()>0){
+                    Map<String,String> command = getCommand();
+
+                    if(command!=null){
+
+                        String commandName = command.get("name");
+                        switch (commandName){
+                            case "show":doShow(command, outstream);
+                                break;
+                        }
+                    }
+                }
+
+				t.sleep(500);
+                //log.info("111");
 			}
 			serialPort.close();
 
@@ -79,22 +85,33 @@ public class Arduino extends Thread{
 	}
 
 	synchronized public void addCommand(Map<String,String> command){
+        log.info("add_command");
 		commands.add(command);
 	}
 
-	Map<String,String> getCommand(){
+    Map<String,String> getCommand(){
 		if (commands.size()>0){
 			Map<String,String> command = commands.get(0);
-			command.remove(0);
+			commands.remove(0);
+
 			return command;
 		}
 		return null;
 	}
 
-	void doShow(Map<String,String> command,OutputStream outputStream){
+    int getCommandsCount(){
+        return commands.size();
+    }
+
+    void doShow(Map<String,String> command,OutputStream outputStream){
 		try{
-			String strCommand = "s"+command.get("artist")+"&"+command.get("track");
-			outputStream.write(strCommand.getBytes());
+			String strCommand1 = "sfst"+command.get("artist")+";";
+            String strCommand2 = "ssst"+command.get("track")+";";
+            log.info(strCommand1);
+            log.info(strCommand2);
+			outputStream.write(strCommand1.getBytes());
+            outputStream.write(strCommand2.getBytes());
+
 
 		}catch (Exception e){
 			log.error(e.toString());

@@ -29,6 +29,8 @@ public class Worker extends Thread{
 	Map<String,String> nowPlay;
 	int id;
 
+    boolean inArduino = false;
+
 	Worker(Heap heap,Lastfm lastfm,Arduino arduino){
 		//System.out.println("worker create");
 		this.heap = heap;
@@ -87,11 +89,15 @@ public class Worker extends Thread{
 		nowPlay = command;
 		play = true;
 		if (arduino!=null){
-			Map<String,String> arduinoCommand = new HashMap<>();
-			arduinoCommand.put("name","show");
-			arduinoCommand.put("artist",command.get("artist"));
-			arduinoCommand.put("track",command.get("track"));
-			arduino.addCommand(arduinoCommand);
+            if (!inArduino){
+                log.info("send_to_arduino");
+                Map<String,String> arduinoCommand = new HashMap<>();
+                arduinoCommand.put("name","show");
+                arduinoCommand.put("artist",command.get("artist"));
+                arduinoCommand.put("track",command.get("track"));
+                arduino.addCommand(arduinoCommand);
+                inArduino = true;
+            }
 		}
 	}
 
@@ -104,6 +110,7 @@ public class Worker extends Thread{
 			}
 			play = false;
 			nowPlay = null;
+            inArduino = false;
 		}
 	}
 	void update(){
@@ -114,13 +121,13 @@ public class Worker extends Thread{
 
 	void sendCommand(String commandStr){
 		try{
-			File lock = new File("//home/darvell/cProjects/basst/mediaRPI/CRadio/lock");
+			File lock = new File("/home/darvell/CProjects/mediaRPI/CRadio/lock");
 			lock.createNewFile();
 			if(lock.exists()){
 				log.info("lock exist");
 			}
 
-			File command = new File("/home/darvell/cProjects/basst/mediaRPI/CRadio/command");
+			File command = new File("/home/darvell/CProjects/mediaRPI/CRadio/command");
 			if (command.exists()){
 				command.delete();
 			}else {
